@@ -1,0 +1,5 @@
+/volumes
+/data
+/.vscode
+.venv
+.DS_Store
