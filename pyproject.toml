@@ -1,2 +1,9 @@
 [tool.black]
 line-length = 79
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 80
+disable = """
+    missing-module-docstring,
+    missing-function-docstring
+"""
