@@ -1,7 +1,7 @@
 import csv
 from dotenv import load_dotenv
-from .core.movie_repository import MovieRepository
-from .core.embed import get_embedding
+from core.movie_repository import MovieRepository
+from core.embed import get_embedding
 
 load_dotenv()
 
@@ -23,14 +23,12 @@ def process_chunk(chunk):
     movie_repository.insert_movies(movies)
 
 
-with open("data/movies.csv", "r") as csvfile:
+with open("data/movies.csv", "r", encoding="UTF-8") as csvfile:
     reader = csv.reader(csvfile, delimiter=",", quotechar='"')
 
     # Skip the header
     header = next(reader)
     print("\n".join([f"{i}: {col}" for i, col in enumerate(header)]))
-
-    # exit()
 
     CHUNK_SIZE = 10
     chunk = []
