@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from core.movie_wizard import MovieWizard
+from .core.movie_wizard import MovieWizard
 
 load_dotenv()
 

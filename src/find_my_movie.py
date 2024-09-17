@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
-from core.movie_repository import MovieRepository
-from core.embed import get_embedding
+from .core.movie_repository import MovieRepository
+from .core.embed import get_embedding
 
 load_dotenv()
 
