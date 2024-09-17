@@ -1,11 +1,16 @@
+import os
 from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 ai_client = OpenAI(
-    base_url="http://192.168.178.60:2500/v1", api_key="lm-studio"
+    base_url=os.environ["OPEN_AI_BASE_URL"],
+    api_key=os.environ["OPEN_AI_API_KEY"],
 )
 
 
-def get_embedding(text, model="nomic-ai/nomic-embed-text-v1.5-GGUF"):
+def get_embedding(text, model=os.environ["OPEN_AI_DEFAULT_EMBED_MODEL"]):
     text = text.replace("\n", " ")
     return (
         ai_client.embeddings.create(input=[text], model=model)
@@ -15,7 +20,7 @@ def get_embedding(text, model="nomic-ai/nomic-embed-text-v1.5-GGUF"):
 
 
 def create_chat_completion(
-    messages, model="lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF"
+    messages, model=os.environ["OPEN_AI_DEFAULT_CMPLT_MODEL"]
 ):
     return (
         ai_client.chat.completions.create(

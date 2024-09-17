@@ -1,5 +1,5 @@
-from src.core.embed import create_chat_completion, get_embedding, system, user
-from src.core.movie_repository import MovieRepository
+from .embed import create_chat_completion, get_embedding, system, user
+from .movie_repository import MovieRepository
 
 
 class MovieWizard:

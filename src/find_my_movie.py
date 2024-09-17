@@ -1,6 +1,8 @@
-from src.core.movie_repository import MovieRepository
-from src.core.embed import get_embedding
+from dotenv import load_dotenv
+from core.movie_repository import MovieRepository
+from core.embed import get_embedding
 
+load_dotenv()
 
 movie_desc = input("What did you just watch?\n")
 

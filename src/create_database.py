@@ -1,6 +1,9 @@
 import csv
-from src.movie_repository import MovieRepository
-from src.embed import get_embedding
+from dotenv import load_dotenv
+from core.movie_repository import MovieRepository
+from core.embed import get_embedding
+
+load_dotenv()
 
 
 movie_repository = MovieRepository()
